@@ -1,0 +1,39 @@
+{
+  "name": "earthlinkweb",
+  "version": "1.0.0",
+  "description": "a modern solution to help us all stay connected and conscious of our world!",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server --hot --progress --color & nodemon ./server/server.js",
+    "start": "nodemon server/server.js"
+  },
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Earth-Link/EarthLinkWeb.git"
+  },
+  "author": "Junaid, Jenny, Thomas, Kyle",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Earth-Link/EarthLinkWeb/issues"
+  },
+  "homepage": "https://github.com/Earth-Link/EarthLinkWeb#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.9.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.21.0",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-react": "^7.18.6",
+    "babel": "^6.23.0",
+    "babel-loader": "^9.1.2",
+    "html-webpack-plugin": "^5.5.0",
+    "nodemon": "^2.0.21",
+    "webpack": "^5.76.1",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.11.1"
+  }
+}
