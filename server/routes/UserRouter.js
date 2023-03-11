@@ -8,7 +8,7 @@ UserRouter.post('/signup', UserController.createUser, (req, res, next) => {
   res.status(200).send('user creator is working')
 })
 
-UserRouter.get('/login', UserController.loginUser, (req, res, next) => {
+UserRouter.post('/login', UserController.loginUser, (req, res, next) => {
     console.log('in login router');
     res.status(200).send('login route is working');
 })
