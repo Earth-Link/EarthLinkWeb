@@ -3,14 +3,18 @@ const express = require("express");
 const app = express();
 const PORT = 3000;
 
+//ROUTES FOR OUR APP
+const UserRouter = require("./routes/UserRouter");
+app.use('/user', UserRouter);
+
 //HANDLE PARSING REQUEST BODIES
 app.use(express.json());
 
 //JUST A TEST ROUTE
-app.get('/test', (req, res, next) => {
-    console.log('in backend');
-    res.status(200).send('COMPLETE');
-})
+app.get("/test", (req, res, next) => {
+  console.log("in backend");
+  res.status(200).send("COMPLETE");
+});
 
 //GLOBAL ERROR HANDLING
 app.use((err, req, res, next) => {

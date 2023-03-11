@@ -1,7 +1,7 @@
 import React from "react";
 
 const App = () => {
-    //THIS IS A FUNCTION JUST FOR TESTING IF THE BACKEND AND FRONTEND IS CONNECTED
+  //THIS IS A FUNCTION JUST FOR TESTING IF THE BACKEND AND FRONTEND IS CONNECTED
   const onclick = () => {
     fetch("/test").then(console.log("testing"));
   };
