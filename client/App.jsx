@@ -7,8 +7,7 @@ const App = () => {
   };
   return (
     <React.Fragment>
-      <h2>Hello!</h2>
-      <button onClick={onclick}>test frontend and backend connection</button>
+      <App/>
     </React.Fragment>
   );
 };
