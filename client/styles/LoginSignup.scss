@@ -1,0 +1,63 @@
+body {
+    margin: auto;
+    font-family: 'Playfair Display', serif;
+    background-image: url("./images/wallpaperflare.com_wallpaper.jpg");
+/* Background image is centered vertically and horizontally at all times */
+background-position: center center;
+
+/* Background image doesn't tile */
+background-repeat: no-repeat;
+
+/* Background image is fixed in the viewport so that it doesn't move when
+the content's height is greater than the image's height */
+background-attachment: fixed;
+
+/* This is what makes the background image rescale based
+on the container's size */
+background-size: cover;
+/* Add the blur effect */
+
+}
+.navbar {
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    margin-right: 10px;
+    h1 {
+        font-family: 'Playfair Display', serif;
+        color: white;
+    }
+    a {
+        display: flex;
+        padding: 6px 10px;
+        text-decoration: none;
+        color: white;
+      }
+    .header-nav {
+        display: flex;
+    align-items: center;
+    padding-left: 20px;
+    margin-right: 10px;
+      }
+} 
+.signup  {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    border-radius: 30px;
+    border-color: orange;
+    padding: 10px;
+    width: 400px;
+    margin-top: 10px;
+    color: white;
+    text-align: center;
+}
+
+.signin {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    border-radius: 10px;
+    border-color: orange;
+    padding: 10px;
+    width: 400px;
+    margin-top: 10px;
+    color: white;
+    text-align: center;
+}
