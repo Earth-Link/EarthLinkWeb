@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import LSContainer from './Components/LoginSignup/LSContainer';
 import HomePageContainer from './Components/HomePage/HomePageContainer';
 import AboutUs from './Components/LoginSignup/AboutUs';
+import Profile from './Components/profilePage/profilePage';
 
 const App = () => {
   //THIS IS A FUNCTION JUST FOR TESTING IF THE BACKEND AND FRONTEND IS CONNECTED
@@ -13,6 +14,7 @@ const App = () => {
     <Routes>
       <Route path='/' element={<LSContainer />} />
       <Route path='/homepage' element={<HomePageContainer />} />
+      <Route path='/profile' element={<Profile />} />
       <Route path='/aboutus' element={<AboutUs />} />
     </Routes>
   );

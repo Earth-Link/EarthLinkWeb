@@ -14,32 +14,32 @@ function HomePageButtonsContainer(props) {
     {
       logo : BsLightbulbOff,
       actionID : "action4",
-      information : "info!",
-      score: 1,
+      information : "Turn lights off",
+      score: 20,
     },
     {
       logo : FaWalking,
       actionID : "action3",
-      information : "info!",
-      score: 10,
+      information : "Walk",
+      score: 350,
     },
     {
       logo : GiWaterRecycling,
       actionID : "action5",
-      information : "info!",
-      score: 5,
+      information : "Reuse bottle",
+      score: 56,
     },
     {
       logo : MdDirectionsBike,
       actionID : "action2",
-      information : "info!",
-      score: 20,
+      information : "Ride a bike",
+      score: 350,
     },
     { 
       logo : IoIosSubway,
       actionID : "action1",
-      information : "info!",
-      score: 7,
+      information : "Take subway",
+      score: 115,
     },
   ];
 

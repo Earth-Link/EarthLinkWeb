@@ -11,6 +11,7 @@ import {
 } from "../../userSlice/userSlice";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
+import { useState } from "react";
 
 function RewardButton(props) {
   // console.log(props, "reward props");
@@ -18,6 +19,16 @@ function RewardButton(props) {
   const dispatch = useDispatch();
 
   const { time } = useSelector((state) => state.user);
+
+  const [showInfo, setShowInfo] = useState(false);
+
+  const handleMouseOver = () => {
+    setShowInfo(true);
+  };
+
+  const handleMouseOut = () => {
+    setShowInfo(false);
+  };
 
   const updateScoreDB = async (score, email) => {
     console.log("updating score");
@@ -51,8 +62,15 @@ function RewardButton(props) {
     <button
       className="RewardButton"
       onClick={() => updateScoreDB(props.score, props.props.email)}
+      onMouseOver={handleMouseOver}
+      onMouseOut={handleMouseOut}
     >
       <Icon className="RewardIcon"></Icon>
+      {showInfo && (
+        <div className="RewardInfo">
+          <p>{props.information}</p>
+        </div>
+      )}
     </button>
   );
 }

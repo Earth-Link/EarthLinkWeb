@@ -30,7 +30,7 @@ function HomePageHeader(props) {
     <div className="HomePageHeader">
       <HomePageHeaderNav props={props.props}></HomePageHeaderNav>
       <div className="scoreDisplay">
-        Your Eco Score is: <span id="score">{score}</span>.{waitError && <span className="waitError">Please wait a second before adding to your score again.</span>}
+        Carbon saved: <span id="score">{score}</span> grams{waitError && <span className="waitError">Please wait a second before adding to your score again.</span>}
       </div>
     </div>
   );
