@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import {useSelector} from 'react-redux';
 import axios from "axios";
 
-function HomePageHeader() {
+function HomePageHeader(props) {
 
   const {reload, score} = useSelector((state) => state.user);
 
@@ -26,15 +26,12 @@ function HomePageHeader() {
   useEffect(() => {
     getScore("Hi, Jenny");
   }, [reload]);
-
   return (
     <div className="HomePageHeader">
-      <HomePageHeaderNav></HomePageHeaderNav>
-      <div>
-        Your total Eco Score is: {score}.
-      </div>
+      <HomePageHeaderNav props={props.props}></HomePageHeaderNav>
+      <div>Your total Eco Score is: {score}.</div>
     </div>
-  )
+  );
 }
 
 export default HomePageHeader;

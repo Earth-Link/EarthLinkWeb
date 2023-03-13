@@ -9,7 +9,7 @@ import AppTest from './AppTest';
 import {store} from './store/store.js';
 import { Provider } from 'react-redux';
 
-const domNode = document.getElementById('root');
+const domNode = document.getElementById("root");
 const root = createRoot(domNode);
 
 root.render(
