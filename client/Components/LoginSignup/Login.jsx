@@ -1,21 +1,22 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const [login, setLogin] = useState(false);
-  return (
-    <>
-      <div className='login/signup'></div>
+  const navigate = useNavigate();
+  
+  const signinHandler = () => {
+    navigate('/homepage');
+  };
 
+  return (
+      <div className='login'> 
       {login ? (
         <div className='signin'>
           <h3 id='signintxt'>Let's Sign into your Account!</h3>
 
-          <form className='form-signin'>
+          <form className='form-signin' onSubmit={signinHandler}>
             <div className='email'>
-              <label className='form__label' htmlFor='email'>
-                {' '}
-                Email{' '}
-              </label>
               <input
                 type='email'
                 id='inputEmail'
@@ -25,10 +26,6 @@ const Login = () => {
               />
             </div>
             <div className='password'>
-              <label className='form__label' htmlFor='password'>
-                {' '}
-                Password{' '}
-              </label>
               <input
                 type='password'
                 id='inputPassword'
@@ -37,12 +34,12 @@ const Login = () => {
                 required
               />
             </div>
-            <div>
+            <div className='submitButton'>
               <button
-                className='btn btn-lg btn-primary btn-block'
+                className='btn-lg'
                 type='submit'
               >
-                Sign in
+                Login
               </button>
             </div>
           </form>
@@ -58,10 +55,6 @@ const Login = () => {
           <h3 id='strtxt'>Create an Account</h3>
           <form className='form-signup'>
             <div className='firstname'>
-              <label className='form__label' htmlFor='firstname'>
-                {' '}
-                First Name{' '}
-              </label>
               <input
                 type='email'
                 name='email'
@@ -71,10 +64,6 @@ const Login = () => {
               />
             </div>
             <div className='lastname'>
-              <label className='form__label' htmlFor='lastname'>
-                {' '}
-                Last Name{' '}
-              </label>
               <input
                 type='email'
                 name='email'
@@ -84,10 +73,6 @@ const Login = () => {
               />
             </div>
             <div className='email'>
-              <label className='form__label' htmlFor='email'>
-                {' '}
-                Email{' '}
-              </label>
               <input
                 type='email'
                 name='email'
@@ -97,10 +82,6 @@ const Login = () => {
               />
             </div>
             <div className='password'>
-              <label className='form__label' htmlFor='password'>
-                {' '}
-                Password{' '}
-              </label>
               <input
                 type='password'
                 name='password'
@@ -110,10 +91,6 @@ const Login = () => {
               />
             </div>
             <div>
-              <label className='form__label' htmlFor='confirmPassword'>
-                {' '}
-                Confirm Password{' '}
-              </label>
               <input
                 type='password'
                 name='confirmPassword'
@@ -124,7 +101,7 @@ const Login = () => {
             </div>
             <div className='submitButton'>
               <button
-                className='btn btn-lg btn-primary btn-block'
+                className='btn-lg'
                 type='submit'
               >
                 Sign Up
@@ -139,7 +116,7 @@ const Login = () => {
           </p>
         </div>
       )}
-    </>
+    </div>
   );
 };
 
