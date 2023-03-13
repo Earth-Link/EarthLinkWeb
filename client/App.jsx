@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import LSContainer from './Components/LoginSignup/LSContainer';
 import HomePageContainer from './Components/HomePage/HomePageContainer';
 import AboutUs from './Components/LoginSignup/AboutUs';
