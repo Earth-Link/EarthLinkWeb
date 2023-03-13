@@ -1,24 +1,7 @@
 const express = require("express");
-const mysql = require("mysql");
 
 const app = express();
 const PORT = 3000;
-
-//CONNECTING TO OUR DATABASE
-
-const db = mysql.createConnection({
-  host: "earthlink-1.ctjtolagqnxt.us-east-2.rds.amazonaws.com",
-  user: "earthlink",
-  password: "123123123",
-});
-
-db.connect((err) => {
-  if (err){
-    console.log('db connect fail', err);
-  } else {
-    console.log('db connected!');
-  }
-});
 
 //ROUTES FOR OUR APP
 const UserRouter = require("./routes/UserRouter");
