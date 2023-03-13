@@ -3,12 +3,12 @@ const express = require("express");
 const app = express();
 const PORT = 3000;
 
+//HANDLE PARSING REQUEST BODIES
+app.use(express.json());
+
 //ROUTES FOR OUR APP
 const UserRouter = require("./routes/UserRouter");
 app.use("/user", UserRouter);
-
-//HANDLE PARSING REQUEST BODIES
-app.use(express.json());
 
 //JUST A TEST ROUTE
 app.get("/test", (req, res, next) => {

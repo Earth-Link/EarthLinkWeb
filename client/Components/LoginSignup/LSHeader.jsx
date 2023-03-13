@@ -1,13 +1,13 @@
-import React from 'react';
+import React from "react";
 
 function Header() {
   return (
-    <nav className='navbar'>
-      <ul class='header-nav'>
-        <a id='about' href='#'>
+    <nav className="navbar">
+      <ul className="header-nav">
+        <a id="about" href="#">
           About Us
         </a>
-        <a id='contact' href='#'>
+        <a id="contact" href="#">
           Contact
         </a>
       </ul>
