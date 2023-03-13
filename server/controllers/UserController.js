@@ -12,6 +12,7 @@ UserController.createUser = (req, res, next) => {
   const queryStr =
     "INSERT INTO user (email, password, firstname, lastname) VALUES (?,?,?,?)";
   try {
+    console.log('here 1')
     db.query(
       queryStr,
       [email, password, firstName, lastName],
@@ -25,6 +26,7 @@ UserController.createUser = (req, res, next) => {
           });
           //IF CONNECTS TO DATA BASE
         } else {
+          console.log('here 2')
           const queryStr =
             "SELECT * FROM user WHERE email = (?) AND password = (?)";
           db.query(queryStr, [email, password], (err, results) => {
@@ -36,6 +38,7 @@ UserController.createUser = (req, res, next) => {
               });
             }
             if (results[0]) {
+              console.log('here 3')
               const { email, password, firstname, lastname, profile_picture } =
                 results[0];
               res.locals.user = {
@@ -44,7 +47,6 @@ UserController.createUser = (req, res, next) => {
                 firstname,
                 lastname,
                 profile_picture,
-                // points
               };
               return next();
             } else {
@@ -94,8 +96,7 @@ UserController.loginUser = (req, res, next) => {
             password,
             firstname,
             lastname,
-            profile_picture,
-            points
+            profile_picture
           };
           return next();
         }

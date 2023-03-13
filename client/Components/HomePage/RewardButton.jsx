@@ -23,7 +23,7 @@ function RewardButton(props) {
     console.log("updating score");
     dispatch(setWaitErrorFalse());
     const currTime = new Date();
-    if (currTime.getTime() - time > 2000) {
+    if (currTime.getTime() - time > 1000) {
       dispatch(resetTime());
       console.log("It's been more than 5 seconds");
       try {

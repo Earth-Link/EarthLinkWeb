@@ -41,7 +41,7 @@ hr {
   justify-content: space-between;
   align-items: center;
   color: white;
-  margin-bottom: 10px;
+
   font-size: 30px;
 }
 
@@ -63,3 +63,15 @@ hr {
   border-radius: 10px;
 }
 
+.buttonHeader {
+  margin-left: 10px;
+}
+
+.scoreDisplay {
+  color: white;
+  font-size: 20px;
+}
+
+#score {
+  font-size: 40px;
+}

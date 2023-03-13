@@ -6,7 +6,7 @@ function HomePageBody(props) {
 
   return (
     <div className="HomePageBody">
-      <div>
+      <div className="buttonHeader">
         Practice eco-friendly behavior by doing the actions below. 
       </div>
       <HomePageButtonsContainer props={props}></HomePageButtonsContainer>

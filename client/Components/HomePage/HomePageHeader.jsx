@@ -29,8 +29,8 @@ function HomePageHeader(props) {
   return (
     <div className="HomePageHeader">
       <HomePageHeaderNav props={props.props}></HomePageHeaderNav>
-      <div>
-        Your total Eco Score is: {score}.{waitError && <span className="waitError">Please wait a second before adding to your score again.</span>}
+      <div className="scoreDisplay">
+        Your Eco Score is: <span id="score">{score}</span>.{waitError && <span className="waitError">Please wait a second before adding to your score again.</span>}
       </div>
     </div>
   );
