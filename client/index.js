@@ -2,7 +2,7 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App';
 import styles from './styles/Application.scss';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 //AppTest is for dev testing the HomePage without routing
 import AppTest from './AppTest';
 
@@ -14,9 +14,9 @@ const root = createRoot(domNode);
 
 root.render(
   <Provider store={store}>
-    <BrowserRouter>
+    <HashRouter>
       <App></App>
-    </BrowserRouter>
+    </HashRouter>
     {/* <AppTest></AppTest> */}
   </Provider>
 );

@@ -1,13 +1,12 @@
-import React from "react";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Header() {
   return (
-    <nav className="navbar">
-      <ul className="header-nav">
-        <a id="about" href="#">
-          About Us
-        </a>
-        <a id="contact" href="#">
+    <nav className='navbar'>
+      <ul class='header-nav'>
+        <Link to='/aboutus'>About Us</Link>
+        <a id='contact' href='#'>
           Contact
         </a>
       </ul>
