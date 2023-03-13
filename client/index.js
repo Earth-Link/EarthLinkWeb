@@ -14,9 +14,9 @@ const root = createRoot(domNode);
 
 root.render(
   <Provider store={store}>
-    {/* <BrowserRouter>
+    <BrowserRouter>
       <App></App>
-    </BrowserRouter> */}
-    <AppTest></AppTest>
+    </BrowserRouter>
+    {/* <AppTest></AppTest> */}
   </Provider>
 );
