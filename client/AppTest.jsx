@@ -1,5 +1,5 @@
 import React from "react";
-import HomePageContainer from "./Components/HomePage/HomepageContainer";
+import HomePageContainer from "./Components/HomePage/HomePageContainer";
 
 function AppTest() {
   console.log("App test");
