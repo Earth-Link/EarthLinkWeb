@@ -51,7 +51,7 @@ function HomePageButtonsContainer() {
     information={button.information}
     score={button.score}
     ></RewardButton>
-  ));
+  );
 
   return <div className="HomePageButtonsContainer">{buttons}</div>;
 }
