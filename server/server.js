@@ -1,11 +1,15 @@
 const express = require("express");
+const cors = require("cors");
 
 const app = express();
 const PORT = 3000;
 
+app.use(cors());
+
 //ROUTES FOR OUR APP
 const UserRouter = require("./routes/UserRouter");
 app.use("/user", UserRouter);
+
 
 //HANDLE PARSING REQUEST BODIES
 app.use(express.json());
