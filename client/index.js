@@ -13,9 +13,10 @@ const domNode = document.getElementById("root");
 const root = createRoot(domNode);
 
 root.render(
-  <React.Fragment>
-    <BrowserRouter>
+  <Provider store={store}>
+    <HashRouter>
       <App></App>
-    </BrowserRouter>
-  </React.Fragment>
+    </HashRouter>
+    {/* <AppTest></AppTest> */}
+  </Provider>
 );
