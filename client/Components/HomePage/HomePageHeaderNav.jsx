@@ -6,7 +6,7 @@ function HomePageHeaderNav(props) {
   return (
     <div className="HomePageHeaderNav">
       <p>Hello, {firstname + " " + lastname}!</p>
-      <img src={profile_picture} />
+      <img id="default_image" src={profile_picture} />
     </div>
   );
 }

@@ -1,35 +1,37 @@
 import React from "react";
 import HomePageHeaderNav from "./HomePageHeaderNav";
 import { useEffect } from "react";
-import {useSelector} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
+import { updateScore } from "../../userSlice/userSlice";
 import axios from "axios";
 
 function HomePageHeader(props) {
+  const dispatch = useDispatch();
+  const {reload, score, waitError} = useSelector((state) => state.user);
 
-  const {reload, score} = useSelector((state) => state.user);
-
-  const getScore = async (username) => {
+  const getScore = async (email) => {
     try {
-        const response = await axios.get("http://localhost:3000/updatescore", {
-            data: {
-              userName : username,
-            },
-        });
-        console.log(response.data);
-        dispatch(updateScore(responseData));
+        const url = `http://localhost:3000/user/getScore/${email}`;
+        console.log("URL: ", url);
+        const response = await axios.get(url);
+        console.log(response.data.totalScore.points);
+        dispatch(updateScore(response.data.totalScore.points));
     } catch (error) {
         console.error(error);
     }
   }
 
+  //pass in 
   //uncomment when connected
   useEffect(() => {
-    getScore("Hi, Jenny");
+    getScore(props.props.email);
   }, [reload]);
   return (
     <div className="HomePageHeader">
       <HomePageHeaderNav props={props.props}></HomePageHeaderNav>
-      <div>Your total Eco Score is: {score}.</div>
+      <div>
+        Your total Eco Score is: {score}.{waitError && <span className="waitError">Please wait a second before adding to your score again.</span>}
+      </div>
     </div>
   );
 }
