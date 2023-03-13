@@ -1,0 +1,111 @@
+html body {
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    font-family: 'Playfair Display', serif;
+    background-image: url("./images/wallpaperflare.com_wallpaper.jpg");
+    /* Background image is centered vertically and horizontally at all times */
+    background-position: center center;
+    /* Background image doesn't tile */
+    background-repeat: no-repeat;
+    /* Background image is fixed in the viewport so that it doesn't move when
+    the content's height is greater than the image's height */background-attachment: fixed;
+    /* This is what makes the background image rescale based
+    on the container's size */
+    background-size: cover;
+    /* Add the blur effect */
+}
+.navbar {
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    margin-right: 10px;
+    a {
+        display: flex;
+        padding: 6px 10px;
+        text-decoration: none;
+        color: white;
+    }
+    .header-nav {
+        display: flex;
+    align-items: center;
+    padding-left: 20px;
+    margin-right: 25px;
+    }
+} 
+.LSBody {
+
+    h1 {
+        margin-left: 10px;
+        font-style: italic;
+        font-family: 'Playfair Display', serif;
+        color: white;
+        font-weight: 700;
+        font-size: 6rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+.signup {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    border-radius: 10px;
+    border: solid;
+    border-color: orange;
+    padding: 10px;
+    width: 400px;
+    margin-top: 1px;
+    color: white;
+    text-align: center;
+    h3 {
+        display: block;
+        font-size: 1.17em;
+        margin-top: 0;
+        margin-bottom: 3;
+        font-weight: bold;
+    }
+}
+
+.signin {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    border-radius: 10px;
+    border: solid;
+    border-color: orange;
+    padding: 0px;
+    width: 300px;
+    margin-top: 0;
+    color: white;
+    text-align: center;
+    padding: 10px;
+
+}
+#signuptxt a {
+    color: white;
+}
+
+#logintxt a {
+    color: white;
+}
+
+
+.form-label {
+    margin-top: 5px;
+}
+
+.login {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.form-control {
+    color: rgb(255, 255, 255) !important;
+    border: 1px solid transparent;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 40px;
+    width: 100%;
+    height: 50px;
+    font-size: 1rem;
+    font-weight: 400;
+    transition: .3s;
+
+}
