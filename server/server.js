@@ -1,10 +1,13 @@
 const express = require("express");
+const cors = require("cors");
 
 const app = express();
 const PORT = 3000;
 
 //HANDLE PARSING REQUEST BODIES
 app.use(express.json());
+
+app.use(cors());
 
 //ROUTES FOR OUR APP
 const UserRouter = require("./routes/UserRouter");

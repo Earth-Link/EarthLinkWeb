@@ -7,40 +7,49 @@ import { BsLightbulbOff } from "react-icons/bs";
 import { GiWaterRecycling } from "react-icons/gi";
 
 function HomePageButtonsContainer() {
-  const logos = [
+  console.log("Container");
+
+  // ;)
+  const buttInfo = [
     {
-      logo: BsLightbulbOff,
-      actionID: "action4",
-      information: "info!",
+      logo : BsLightbulbOff,
+      actionID : "action4",
+      information : "info!",
+      score: 1,
     },
     {
-      logo: FaWalking,
-      actionID: "action3",
-      information: "info!",
+      logo : FaWalking,
+      actionID : "action3",
+      information : "info!",
+      score: 10,
     },
     {
-      logo: GiWaterRecycling,
-      actionID: "action5",
-      information: "info!",
+      logo : GiWaterRecycling,
+      actionID : "action5",
+      information : "info!",
+      score: 5,
     },
     {
-      logo: MdDirectionsBike,
-      actionID: "action2",
-      information: "info!",
+      logo : MdDirectionsBike,
+      actionID : "action2",
+      information : "info!",
+      score: 20,
     },
-    {
-      logo: IoIosSubway,
-      actionID: "action1",
-      information: "info!",
+    { 
+      logo : IoIosSubway,
+      actionID : "action1",
+      information : "info!",
+      score: 7,
     },
   ];
 
-  const buttons = logos.map((button, idx) => (
-    <RewardButton
-      key={idx}
-      logo={button.logo}
-      actionID={button.actionID}
-      information={button.information}
+  const buttons = buttInfo.map((button,idx) => 
+    <RewardButton 
+    key={idx}
+    logo={button.logo} 
+    actionID={button.actionID}
+    information={button.information}
+    score={button.score}
     ></RewardButton>
   ));
 
