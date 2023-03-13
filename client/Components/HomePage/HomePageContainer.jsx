@@ -10,7 +10,7 @@ function HomePageContainer() {
     <div className="HomePageContainer">
       <HomePageHeader props={location.state}></HomePageHeader>
       <hr />
-      <HomePageBody></HomePageBody>
+      <HomePageBody props={location.state}></HomePageBody>
     </div>
   );
 }

@@ -6,7 +6,7 @@ import { FaWalking } from "react-icons/fa";
 import { BsLightbulbOff } from "react-icons/bs";
 import { GiWaterRecycling } from "react-icons/gi";
 
-function HomePageButtonsContainer() {
+function HomePageButtonsContainer(props) {
   console.log("Container");
 
   // ;)
@@ -45,6 +45,7 @@ function HomePageButtonsContainer() {
 
   const buttons = buttInfo.map((button,idx) => 
     <RewardButton 
+    props={props.props}
     key={idx}
     logo={button.logo} 
     actionID={button.actionID}

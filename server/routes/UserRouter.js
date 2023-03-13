@@ -23,17 +23,17 @@ UserRouter.get(
   UserController.getScore,
   (req, res, next) => {
     console.log("in getScore router");
-    res.status(200).send(res.locals.score);
+    res.status(200).json({totalScore : res.locals.score});
   }
 );
 
 // UPDATE SCORE
 UserRouter.post(
-  "/updateScore",
+  "/updatescore/",
   UserController.updateScore,
   (req, res, next) => {
     console.log("in updateScore router");
-    res.status(200).send(res.locals.score);
+    res.status(200).json({totalScore : res.locals.score});
   }
 );
 

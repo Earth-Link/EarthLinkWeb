@@ -12,6 +12,7 @@ UserController.createUser = (req, res, next) => {
   const queryStr =
     "INSERT INTO user (email, password, firstname, lastname) VALUES (?,?,?,?)";
   try {
+    console.log('here 1')
     db.query(
       queryStr,
       [email, password, firstName, lastName],
@@ -25,8 +26,37 @@ UserController.createUser = (req, res, next) => {
           });
           //IF CONNECTS TO DATA BASE
         } else {
-          res.locals.user = { firstName, lastName };
-          return next();
+          console.log('here 2')
+          const queryStr =
+            "SELECT * FROM user WHERE email = (?) AND password = (?)";
+          db.query(queryStr, [email, password], (err, results) => {
+            if (err) {
+              return next({
+                log: "Express error handler caught signup db middleware error",
+                status: 400,
+                message: { err: err },
+              });
+            }
+            if (results[0]) {
+              console.log('here 3')
+              const { email, password, firstname, lastname, profile_picture } =
+                results[0];
+              res.locals.user = {
+                email,
+                password,
+                firstname,
+                lastname,
+                profile_picture,
+              };
+              return next();
+            } else {
+              return next({
+                log: "Express error handler caught signup db middleware error",
+                status: 400,
+                message: { err: err },
+              });
+            }
+          });
         }
       }
     );
@@ -66,7 +96,7 @@ UserController.loginUser = (req, res, next) => {
             password,
             firstname,
             lastname,
-            profile_picture,
+            profile_picture
           };
           return next();
         }
@@ -89,8 +119,9 @@ UserController.loginUser = (req, res, next) => {
 };
 
 UserController.getScore = (req, res, next) => {
+  console.log("REQ PARAMS: ", req.params);
   const { email } = req.params;
-  const queryStr = "SELECT points FROM user WHERE email = (?)";
+  const queryStr = "SELECT points FROM user WHERE email = ?";
   try {
     db.query(queryStr, [email], (err, results) => {
       //IF DOESNT CONNECT TO DATABASE
@@ -102,7 +133,8 @@ UserController.getScore = (req, res, next) => {
         });
         //IF CONNECTS TO DATABASE AND QUERY SUCCEEDS
       } else {
-        if (result[0]) {
+        console.log('received getScore request')
+        if (results[0]) {
           //do we need email back?
           const { email, points } = results[0];
           res.locals.score = { points };
@@ -111,7 +143,7 @@ UserController.getScore = (req, res, next) => {
       }
       //IF NO RESULT FOUND FROM QUERY
       return next({
-        log: "Express error handler caught userNotFound middleware error",
+        log: "Express error handler caught getScore middleware error",
         status: 400,
         message: { err: "an error occured" },
       });
@@ -128,40 +160,27 @@ UserController.getScore = (req, res, next) => {
 
 //UPDATE SCORE
 UserController.updateScore = (req, res, next) => {
-  const { email, addScore } = req.body;
-  console.log("in updateScore middleware", req.body);
-  const queryStr = "UPDATE points SET points = (points + ?) WHERE email = (?)";
+  const { email, score } = req.body.data;
+  console.log("UPDATING SCORE - REQ BODY", req.body.data);
+  const queryStr = "UPDATE user SET points = points + ? WHERE email = ? ";
   try {
-    db.query(queryStr, [addScore, email], (err, results) => {
+    db.query(queryStr, [score, email], (err, results) => {
       //IF DOESNT CONNECT TO DATEBASE
+      console.log('in here')
       if (err) {
         return next({
-          log: "Express error handler caught updateScore db middleware error",
+          log: "Express error handler caught 1st updateScore db middleware error",
           status: 400,
           message: { err: err },
         });
         //IF QUERY CONNECTS TO DATABASE
       } else {
         // IF FOUND USER
-        if (results[0]) {
-          console.log("match found");
-          // const { email, password, firstname, lastname } = results[0];
-          // res.locals.user = {
-          //   email,
-          //   password,
-          //   firstname,
-          //   lastname,
-          // };
-          return next();
-        }
-      }
+        console.log(results)
+        //SELECT AND FIND UPDATED DATA
       //IF NO RESULTS FOUND aka NO USER MATCH
-      return next({
-        log: "Express error handler caught updateScore middleware error",
-        status: 400,
-        message: { err: "an error occured" },
-      });
-    });
+      return next();
+    }});
     //IF QUERY FAILS
   } catch (e) {
     return next({
