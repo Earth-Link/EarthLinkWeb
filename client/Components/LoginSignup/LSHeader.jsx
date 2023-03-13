@@ -1,12 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Header() {
   return (
     <nav className='navbar'>
       <ul class='header-nav'>
-        <a id='about' href='#'>
-          About Us
-        </a>
+        <Link to='/aboutus'>About Us</Link>
         <a id='contact' href='#'>
           Contact
         </a>
